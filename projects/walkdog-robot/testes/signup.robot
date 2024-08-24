@@ -8,7 +8,8 @@ Test Teardown     Finish session
 
 *** Test Cases ***
 Deve poder cadastrar um dog walker
-    
+    [Tags]    smoke
+
     ${dog_walker}         Create Dictionary    
     ...    name=Rafael Bertolai
     ...    email=rafaelbertolai2@gmail.com
@@ -56,3 +57,45 @@ Não deve cadastrar se o cpf for incorreto
     Abertura da pagina de cadastro de walkdog
     Preencher os dados do formulario    ${dog_walker}
     Enviar formulario
+
+Deve poder cadastrar um dog walker que sabe cuidar de pets
+    [Tags]    aservice
+
+    ${dog_walker}         Create Dictionary    
+    ...    name=Rafael Bertolai
+    ...    email=rafaelbertolai2@gmail.com
+    ...    cpf=00000014141
+    ...    cep=05564200
+    ...    street=Avenida Engenheiro Heitor Antônio Eiras Garcia
+    ...    district=Jardim Esmeralda
+    ...    city_uf=São Paulo/SP
+    ...    number=6278
+    ...    details=Casa 6
+    ...    cnh=toretto.jpg
+    ...    additional_service=Cuidar
+
+    Abertura da pagina de cadastro de walkdog
+    Preencher os dados do formulario    ${dog_walker}
+    Enviar formulario
+    Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
+
+Deve poder cadastrar um dog walker que sabe adestrar pets
+    [Tags]    aservice
+
+    ${dog_walker}         Create Dictionary    
+    ...    name=Rafael Bertolai
+    ...    email=rafaelbertolai2@gmail.com
+    ...    cpf=00000014141
+    ...    cep=05564200
+    ...    street=Avenida Engenheiro Heitor Antônio Eiras Garcia
+    ...    district=Jardim Esmeralda
+    ...    city_uf=São Paulo/SP
+    ...    number=6278
+    ...    details=Casa 6
+    ...    cnh=toretto.jpg
+    ...    additional_service=Adestrar
+
+    Abertura da pagina de cadastro de walkdog
+    Preencher os dados do formulario    ${dog_walker}
+    Enviar formulario
+    Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
