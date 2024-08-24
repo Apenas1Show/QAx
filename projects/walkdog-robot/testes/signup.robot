@@ -3,6 +3,9 @@ Documentation        Suite de testes de cadastro de dog walker
 
 Resource    ../resources/base.resource
 
+Test Setup        Start session
+Test Teardown     Finish session
+
 *** Test Cases ***
 Deve poder cadastrar um dog walker
     
@@ -18,29 +21,14 @@ Deve poder cadastrar um dog walker
     ...    details=Casa 6
     ...    cnh=toretto.jpg
 
-    Start session
     Abertura da pagina de cadastro de walkdog
     Preencher os dados do formulario    ${dog_walker}
     Enviar formulario
     Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
-    Finish session
 
 Não deve cadastrar se os campos obrigatórios não forem preenchidos
     [Tags]    required
 
-    # ${dog_walker}         Create Dictionary    
-    # ...    name=Rafael Bertolai
-    # ...    email=rafaelbertolai2@gmail.com
-    # ...    cpf=00000014141
-    # ...    cep=05564200
-    # ...    street=Avenida Engenheiro Heitor Antônio Eiras Garcia
-    # ...    district=Jardim Esmeralda
-    # ...    city_uf=São Paulo/SP
-    # ...    number=6278
-    # ...    details=Casa 6
-    # ...    cnh=toretto.jpg
-
-    Start session
     Abertura da pagina de cadastro de walkdog
     Enviar formulario
     Alert should be     Informe o seu nome completo
@@ -49,7 +37,6 @@ Não deve cadastrar se os campos obrigatórios não forem preenchidos
     Alert should be     Informe o seu CEP
     Alert should be     Informe um número maior que zero
     Alert should be     Adcione um documento com foto (RG ou CHN)
-    Finish session
 
 Não deve cadastrar se o cpf for incorreto
     [Tags]    cpf_inv
@@ -66,8 +53,6 @@ Não deve cadastrar se o cpf for incorreto
     ...    details=Casa 6
     ...    cnh=toretto.jpg
 
-    Start session
     Abertura da pagina de cadastro de walkdog
     Preencher os dados do formulario    ${dog_walker}
     Enviar formulario
-    Finish session
