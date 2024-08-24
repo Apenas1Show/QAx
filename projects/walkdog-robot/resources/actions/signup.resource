@@ -1,28 +1,7 @@
 *** Settings ***
-Documentation        Suite de testes de cadastro de dog walker
+Documentation    Ações, steps e elementos da funcionalidade de cadastro
 
-Library        Browser
-
-*** Test Cases ***
-Deve poder cadastrar um dog walker
-    
-    ${dog_walker}         Create Dictionary    
-    ...    name=Rafael Bertolai
-    ...    email=rafaelbertolai2@gmail.com
-    ...    cpf=00000014141
-    ...    cep=05564200
-    ...    street=Avenida Engenheiro Heitor Antônio Eiras Garcia
-    ...    district=Jardim Esmeralda
-    ...    city_uf=São Paulo/SP
-    ...    number=6278
-    ...    details=Casa 6
-    ...    cnh=toretto.jpg
-
-    Abertura da pagina de cadastro de walkdog
-    Preencher os dados do formulario    ${dog_walker} 
-    Enviar formulario
-    Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
-    Screenshot do teste finalizado
+Library    Browser
 
 *** Keywords ***
 Abertura da pagina de cadastro de walkdog
@@ -49,7 +28,7 @@ Preencher os dados do formulario
     Fill Text            css=input[name=addressNumber]   ${dog_walker}[number]   
     Fill Text            css=input[name=addressDetails]  ${dog_walker}[details]       
 
-    Upload File By Selector    css=input[type=file]    ${EXECDIR}/${dog_walker}[cnh]
+    Upload File By Selector    css=input[type=file]    ${EXECDIR}/resources/fixtures/${dog_walker}[cnh]
 
 Enviar formulario
     Click    css=.button-register    
