@@ -1,12 +1,11 @@
 *** Settings ***
-Documentation    Ações, steps e elementos da funcionalidade de cadastro
+Documentation        Ações, steps e elementos da funcionalidade de cadastro
 
 Library    Browser
 
-*** Keywords ***
+*** Keywords *** 
 Abertura da pagina de cadastro de walkdog
-    New Browser     browser=chromium    headless=False
-    New Page        https://walkdog.vercel.app/signup
+    Click    css=a[href="/signup"]
 
     Wait For Elements State    form h1    visible    5000
     Get Text                   form h1    equal      Faça seu cadastro
@@ -37,6 +36,3 @@ Validar mensagem de sucesso
     [Arguments]    ${sucessMessage}
     Wait For Elements State    css=#swal2-html-container    visible    5
     Get Text                   css=#swal2-html-container    equal      ${sucessMessage}
-
-Screenshot do teste finalizado
-    Take Screenshot    fullPage=True
