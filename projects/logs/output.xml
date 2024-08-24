@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.5 on win32)" generated="2024-08-11T05:01:11.646801" rpa="false" schemaversion="5">
+<suite id="s1" name="Player" source="C:\QAx\projects\parodify-robot\player.robot">
+<test id="s1-t1" name="Deve tocar uma musica" line="5">
+<kw name="New Page">
+<msg time="2024-08-11T05:01:11.685250" level="FAIL">No keyword with name 'New Page' found.</msg>
+<arg>https://parodify.vercel.app/</arg>
+<status status="FAIL" start="2024-08-11T05:01:11.685250" elapsed="0.000000">No keyword with name 'New Page' found.</status>
+</kw>
+<kw name="Get Text">
+<arg>css=.logged-user</arg>
+<arg>contains</arg>
+<arg>Fernando Papito</arg>
+<status status="NOT RUN" start="2024-08-11T05:01:11.685250" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-08-11T05:01:11.684254" elapsed="0.000996">No keyword with name 'New Page' found.</status>
+</test>
+<status status="FAIL" start="2024-08-11T05:01:11.646801" elapsed="0.039448"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Player">Player</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-08-11T05:01:11.683242" level="ERROR">Error in file 'C:\QAx\projects\parodify-robot\player.robot' on line 2: Importing library 'Browser' failed: ModuleNotFoundError: No module named 'Browser'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\T480\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\T480\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\T480\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\T480\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\T480\AppData\Local\Programs\Python\Python311
+  C:\Users\T480\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+</errors>
+</robot>

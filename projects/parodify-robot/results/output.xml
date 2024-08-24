@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-08-11T21:54:41.636632" rpa="false" schemaversion="5">
+<suite id="s1" name="Parodify-Robot" source="C:\QAx\projects\parodify-robot">
+<suite id="s1-s1" name="Player" source="C:\QAx\projects\parodify-robot\player.robot">
+<test id="s1-s1-t1" name="Deve tocar uma musica" line="5">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-08-11T21:54:42.502318" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\parodify-robot\\results\\browser\\traces\\7c661747-d180-4740-ba3c-72827093c52b"}</msg>
+<msg time="2024-08-11T21:54:43.402208" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\parodify-robot\\results\\browser\\traces\\7c661747-d180-4740-ba3c-72827093c52b"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-08-11T21:54:42.502318" elapsed="0.899890"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-08-11T21:54:44.573555" level="INFO">Successfully initialized new page object and opened url: https://parodify.vercel.app</msg>
+<msg time="2024-08-11T21:54:44.573555" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://parodify.vercel.app</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-08-11T21:54:43.419000" elapsed="1.155530"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-08-11T21:54:44.688280" level="INFO">Text: 'Fernando Papito'</msg>
+<arg>css=.logged-user</arg>
+<arg>contains</arg>
+<arg>Fernando Papito</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-08-11T21:54:44.576525" elapsed="0.111755"/>
+</kw>
+<status status="PASS" start="2024-08-11T21:54:42.502318" elapsed="2.185962"/>
+</test>
+<status status="PASS" start="2024-08-11T21:54:41.675322" elapsed="3.158336"/>
+</suite>
+<status status="PASS" start="2024-08-11T21:54:41.645936" elapsed="3.207340"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Parodify-Robot">Parodify-Robot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Player">Parodify-Robot.Player</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
