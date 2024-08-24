@@ -72,10 +72,10 @@ Deve poder cadastrar um dog walker que sabe cuidar de pets
     ...    number=6278
     ...    details=Casa 6
     ...    cnh=toretto.jpg
-    ...    additional_service=Cuidar
 
     Abertura da pagina de cadastro de walkdog
     Preencher os dados do formulario    ${dog_walker}
+    Additional Service    Cuidar
     Enviar formulario
     Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
 
@@ -93,9 +93,9 @@ Deve poder cadastrar um dog walker que sabe adestrar pets
     ...    number=6278
     ...    details=Casa 6
     ...    cnh=toretto.jpg
-    ...    additional_service=Adestrar
 
     Abertura da pagina de cadastro de walkdog
     Preencher os dados do formulario    ${dog_walker}
+    Additional Service    Adestrar
     Enviar formulario
     Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.

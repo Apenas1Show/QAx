@@ -27,10 +27,13 @@ Preencher os dados do formulario
     Fill Text            css=input[name=addressNumber]   ${dog_walker}[number]   
     Fill Text            css=input[name=addressDetails]  ${dog_walker}[details]       
 
-    Click    xpath=//span[text()="${dog_walker}[additional_service]"]/..    
-    Take Screenshot    selector=//span[text()="${dog_walker}[additional_service]"]/..
-
     Upload File By Selector    css=input[type=file]    ${EXECDIR}/resources/fixtures/${dog_walker}[cnh]
+
+Additional Service
+    [Arguments]    ${additional_service}
+
+    Click    xpath=//span[text()="${additional_service}"]/..    
+    Take Screenshot    selector=//span[text()="${additional_service}"]/..
 
 Enviar formulario
     Click    css=.button-register    
