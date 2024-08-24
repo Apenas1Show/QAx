@@ -6,19 +6,20 @@ Library        Browser
 *** Test Cases ***
 Deve poder cadastrar um dog walker
     
-    ${name}               Set Variable    Rafael Bertolai
-    ${email}              Set Variable    rafaelbertolai2@gmail.com
-    ${cpf}                Set Variable    00000014141
-    ${cep}                Set Variable    05564200
-    ${addressStreet}      Set Variable    Avenida Engenheiro Heitor Antônio Eiras Garcia
-    ${addressDistrict}    Set Variable    Jardim Esmeralda
-    ${addressCityUf}      Set Variable    São Paulo/SP
-    ${addressNumber}      Set Variable    6280
-    ${addressDetails}     Set Variable    CASA 6
-    ${cnh}                Set Variable    toretto.jpg
+    ${dog_walker}         Create Dictionary    
+    ...    name=Rafael Bertolai
+    ...    email=rafaelbertolai2@gmail.com
+    ...    cpf=00000014141
+    ...    cep=05564200
+    ...    street=Avenida Engenheiro Heitor Antônio Eiras Garcia
+    ...    district=Jardim Esmeralda
+    ...    city_uf=São Paulo/SP
+    ...    number=6278
+    ...    details=Casa 6
+    ...    cnh=toretto.jpg
 
     Abertura da pagina de cadastro de walkdog
-    Preencher os dados do formulario    ${name}           ${email}          ${cpf}            ${cep}            ${addressStreet}  ${addressDistrict}    ${addressCityUf}      ${addressNumber}      ${addressDetails}     ${cnh}
+    Preencher os dados do formulario    ${dog_walker} 
     Enviar formulario
     Validar mensagem de sucesso    Recebemos o seu cadastro e em breve retornaremos o contato.
     Screenshot do teste finalizado
@@ -32,23 +33,23 @@ Abertura da pagina de cadastro de walkdog
     Get Text                   form h1    equal      Faça seu cadastro
 
 Preencher os dados do formulario
-    [Arguments]    ${name}           ${email}          ${cpf}            ${cep}            ${addressStreet}  ${addressDistrict}    ${addressCityUf}      ${addressNumber}      ${addressDetails}     ${cnh}            
+    [Arguments]   ${dog_walker}       
 
-    Fill Text            css=input[name=name]            ${name}    
-    Fill Text            css=input[name=email]           ${email}
-    Fill Text            css=input[name=cpf]             ${cpf}        
-    Fill Text            css=input[name=cep]             ${cep}  
+    Fill Text            css=input[name=name]            ${dog_walker}[name]    
+    Fill Text            css=input[name=email]           ${dog_walker}[email]
+    Fill Text            css=input[name=cpf]             ${dog_walker}[cpf]       
+    Fill Text            css=input[name=cep]             ${dog_walker}[cep]  
 
     Click    css=input[type=button][value$=CEP]
     
-    Get Property    css=input[name=addressStreet]        value    equal    ${addressStreet}
-    Get Property    css=input[name=addressDistrict]      value    equal    ${addressDistrict}
-    Get Property    css=input[name=addressCityUf]        value    equal    ${addressCityUf}
+    Get Property    css=input[name=addressStreet]        value    equal    ${dog_walker}[street]
+    Get Property    css=input[name=addressDistrict]      value    equal    ${dog_walker}[district]
+    Get Property    css=input[name=addressCityUf]        value    equal    ${dog_walker}[city_uf]
     
-    Fill Text            css=input[name=addressNumber]   ${addressNumber}   
-    Fill Text            css=input[name=addressDetails]  ${addressDetails}       
+    Fill Text            css=input[name=addressNumber]   ${dog_walker}[number]   
+    Fill Text            css=input[name=addressDetails]  ${dog_walker}[details]       
 
-    Upload File By Selector    css=input[type=file]    ${EXECDIR}/${cnh}
+    Upload File By Selector    css=input[type=file]    ${EXECDIR}/${dog_walker}[cnh]
 
 Enviar formulario
     Click    css=.button-register    
