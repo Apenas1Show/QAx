@@ -43,25 +43,12 @@ Não deve cadastrar se os campos obrigatórios não forem preenchidos
     Start session
     Abertura da pagina de cadastro de walkdog
     Enviar formulario
-
-    Wait For Elements State    css=.alert-error >> text=Informe o seu nome completo
-    ...    visible    5    
-    
-    Wait For Elements State    css=.alert-error >> text=Informe o seu melhor email
-    ...    visible    5
-
-    Wait For Elements State    css=.alert-error >> text=Informe o seu CPF
-    ...    visible    5
-
-    Wait For Elements State    css=.alert-error >> text=Informe o seu CEP
-    ...    visible    5
-
-    Wait For Elements State    css=.alert-error >> text=Informe um número maior que zero
-    ...    visible    5
-
-    Wait For Elements State    css=.alert-error >> text=Informe um número maior que zero
-    ...    visible    5
-
+    Alert should be     Informe o seu nome completo
+    Alert should be     Informe o seu melhor email
+    Alert should be     Informe o seu CPF
+    Alert should be     Informe o seu CEP
+    Alert should be     Informe um número maior que zero
+    Alert should be     Adcione um documento com foto (RG ou CHN)
     Finish session
 
 Não deve cadastrar se o cpf for incorreto

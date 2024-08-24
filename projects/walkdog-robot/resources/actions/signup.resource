@@ -36,3 +36,9 @@ Validar mensagem de sucesso
     [Arguments]    ${sucessMessage}
     Wait For Elements State    css=#swal2-html-container    visible    5
     Get Text                   css=#swal2-html-container    equal      ${sucessMessage}
+
+Alert should be
+    [Arguments]    ${alert-error}
+
+    Wait For Elements State    css=.alert-error >> text=${alert-error}
+    ...    visible    5   
